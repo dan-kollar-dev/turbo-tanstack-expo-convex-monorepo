@@ -3,14 +3,13 @@
 /** @type {import('prettier').Config} */
 const config = {
   semi: true,
-  trailingComma: "all",
-  singleQuote: false,
+  trailingComma: 'all',
+  singleQuote: true,
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
-  arrowParens: "always",
-  endOfLine: "lf",
+  arrowParens: 'always',
+  endOfLine: 'lf',
 };
 
 export default config;
-

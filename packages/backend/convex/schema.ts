@@ -1,4 +1,4 @@
-import { defineSchema } from "convex/server";
+import { defineSchema } from 'convex/server';
 
 export default defineSchema({
   // Example table - customize as needed
