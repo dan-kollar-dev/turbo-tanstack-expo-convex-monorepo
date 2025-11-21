@@ -1,0 +1,20 @@
+# Native build folders
+/ios
+/android
+
+# Native certificates and keys
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Kotlin
+.kotlin/
+
+# Metro bundler
+.metro-health-check*
+
+# App-specific
+app-example

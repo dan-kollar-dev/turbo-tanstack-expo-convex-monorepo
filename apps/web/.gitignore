@@ -1,0 +1,11 @@
+# TanStack Start / Nitro specific
+.nitro
+.tanstack
+.vinxi
+
+# Cloudflare Workers
+.wrangler
+
+# App-specific files
+count.txt
+todos.json
