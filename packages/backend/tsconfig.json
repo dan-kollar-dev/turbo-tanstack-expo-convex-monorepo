@@ -16,4 +16,3 @@
   "include": ["convex/**/*"],
   "exclude": ["node_modules", "convex/_generated"]
 }
-

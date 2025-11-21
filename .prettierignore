@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+build
+.next
+.turbo
+.output
+.expo
+web-build
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Generated files
+**/_generated
+**/routeTree.gen.ts
+
+# Convex
+.convex
+
+# Other
+*.log
+.DS_Store
+

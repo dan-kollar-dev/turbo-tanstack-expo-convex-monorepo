@@ -8,4 +8,3 @@ export default defineSchema({
   //   email: v.string(),
   // }).index("by_email", ["email"]),
 });
-

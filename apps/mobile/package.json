@@ -12,6 +12,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "clean": "rm -rf .expo dist web-build"
   },
   "dependencies": {

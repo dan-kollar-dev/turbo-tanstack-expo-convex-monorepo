@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^20.10.0
         version: 20.19.25
+      prettier:
+        specifier: ^3.5.3
+        version: 3.6.2
       turbo:
         specifier: ^2.0.0
         version: 2.6.1

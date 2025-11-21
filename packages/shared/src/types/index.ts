@@ -8,4 +8,3 @@ export type User = {
 };
 
 // Add more shared types as needed
-

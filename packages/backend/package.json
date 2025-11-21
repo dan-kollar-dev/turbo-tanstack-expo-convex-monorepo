@@ -7,6 +7,8 @@
     "deploy": "convex deploy",
     "type-check": "tsc --noEmit",
     "lint": "echo \"No linting configured\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "clean": "rm -rf .convex"
   },
   "dependencies": {
@@ -17,4 +19,3 @@
     "@repo/shared": "workspace:*"
   }
 }
-
