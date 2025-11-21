@@ -203,18 +203,48 @@ importers:
         specifier: ^1.11.0
         version: 1.29.3(react@19.2.0)
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.39.1
+        version: 9.39.1
       '@repo/shared':
         specifier: workspace:*
         version: link:../shared
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.0.0
+        version: 8.47.0(@typescript-eslint/parser@8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/parser':
+        specifier: ^8.0.0
+        version: 8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      eslint:
+        specifier: ^9.25.0
+        version: 9.39.1(jiti@2.6.1)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      typescript-eslint:
+        specifier: ^8.0.0
+        version: 8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
 
   packages/shared:
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.39.1
+        version: 9.39.1
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.0.0
+        version: 8.47.0(@typescript-eslint/parser@8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/parser':
+        specifier: ^8.0.0
+        version: 8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      eslint:
+        specifier: ^9.25.0
+        version: 9.39.1(jiti@2.6.1)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      typescript-eslint:
+        specifier: ^8.0.0
+        version: 8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
 
 packages:
 
