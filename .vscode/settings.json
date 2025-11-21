@@ -1,12 +1,5 @@
 {
-  "cSpell.words": [
-    "braiser",
-    "firecrawl",
-    "katex",
-    "kollar",
-    "tanstackstart",
-    "Vinxi"
-  ],
+  "cSpell.words": ["kollar", "tanstackstart", "Turborepo"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
