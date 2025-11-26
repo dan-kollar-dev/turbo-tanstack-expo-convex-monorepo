@@ -14,6 +14,10 @@ build/
 out/
 .output/
 
+# Turbo
+.turbo/
+**/.turbo/
+
 # Misc
 .DS_Store
 *.pem

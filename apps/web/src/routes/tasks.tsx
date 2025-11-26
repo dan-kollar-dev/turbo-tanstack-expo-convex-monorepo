@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useQuery, useMutation } from 'convex/react';
+import { useMutation, useQuery } from 'convex/react';
 import { api } from '@repo/convex-client/api';
-import { Id } from '@repo/convex-client/dataModel';
 import { useState } from 'react';
-import { Trash2, Edit2, Check, X } from 'lucide-react';
+import { Check, Edit2, Trash2, X } from 'lucide-react';
+import type { Id } from '@repo/convex-client/dataModel';
 
 export const Route = createFileRoute('/tasks')({
   component: TasksPage,

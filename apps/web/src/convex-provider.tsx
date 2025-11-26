@@ -1,6 +1,8 @@
-import { ConvexProvider as BaseConvexProvider } from 'convex/react';
-import { ConvexReactClient } from 'convex/react';
-import { ReactNode } from 'react';
+import {
+  ConvexProvider as BaseConvexProvider,
+  ConvexReactClient,
+} from 'convex/react';
+import type { ReactNode } from 'react';
 
 const convexUrl = import.meta.env.VITE_CONVEX_URL || '';
 
