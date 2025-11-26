@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 
 import Header from '../components/Header';
+import { ConvexProvider } from '../convex-provider';
 
 import appCss from '../styles.css?url';
 
@@ -17,7 +18,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'tanstack-expo-convex-monorepo',
       },
     ],
     links: [
@@ -38,8 +39,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
+        <ConvexProvider>
+          <Header />
+          {children}
+        </ConvexProvider>
         <TanStackDevtools
           config={{
             position: 'bottom-right',

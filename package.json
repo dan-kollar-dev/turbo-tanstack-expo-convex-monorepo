@@ -1,29 +1,63 @@
 {
-  "name": "turbo-tanstack-expo-convex-monorepo",
+  "name": "tanstack-expo-convex-monorepo",
   "version": "0.0.0",
   "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/expo",
+      "**/expo/**",
+      "**/@expo/**",
+      "**/react-native",
+      "**/react-native/**",
+      "**/@react-native/**",
+      "**/react-native-*",
+      "**/expo-*",
+      "@repo/mobile/**",
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**",
+      "**/@types/react",
+      "**/@types/react-dom",
+      "**/@react-navigation/**",
+      "**/react-native-gesture-handler",
+      "**/react-native-reanimated",
+      "**/react-native-safe-area-context",
+      "**/react-native-screens",
+      "**/react-native-web",
+      "**/react-native-worklets",
+      "**/use-sync-external-store",
+      "**/use-sync-external-store/**",
+      "@repo/web/**"
+    ]
+  },
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint -- --fix",
+    "lint:fix": "turbo run lint:fix",
     "format": "turbo run format",
     "format:check": "turbo run format:check",
     "type-check": "turbo run type-check",
     "clean": "turbo run clean",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "find . -path '*/node_modules/use-sync-external-store/node_modules/react' -type d -prune -exec rm -rf {} + 2>/dev/null || true"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.10.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.5.3",
-    "turbo": "^2.0.0",
+    "turbo": "^2.3.3",
     "typescript": "^5.7.2"
   },
-  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
   "engines": {
     "node": ">=18.0.0",
-    "pnpm": ">=10.0.0"
+    "yarn": ">=1.22.0"
   }
 }

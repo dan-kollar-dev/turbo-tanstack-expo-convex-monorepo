@@ -1,0 +1,5 @@
+{
+  "extends": "./packages/shared/tsconfig.base.json",
+  "compilerOptions": {},
+  "exclude": ["node_modules", "**/node_modules", "**/dist", "**/build"]
+}

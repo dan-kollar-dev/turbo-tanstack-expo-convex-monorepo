@@ -1,36 +1,37 @@
 # Convex Monorepo
 
-A monorepo setup using Turborepo, pnpm workspaces, TanStack Start (web), Expo (mobile), and Convex (backend).
+A monorepo setup using Turborepo with Yarn workspaces, TanStack Start (web), Expo (mobile), and Convex (backend).
 
 ## Structure
 
 ```
 /
 ├── apps/
+│   ├── backend/      # Convex backend functions
 │   ├── web/          # TanStack Start web application
 │   └── mobile/       # Expo mobile application
 ├── packages/
-│   ├── backend/      # Convex backend functions
+│   ├── convex-client/ # Convex client API re-exports
 │   └── shared/       # Shared TypeScript types and utilities
 ```
 
 ## Prerequisites
 
 - Node.js >= 18.0.0
-- pnpm >= 10.0.0
+- Yarn >= 1.22.0 (Classic)
 
 ## Getting Started
 
 1. Install dependencies:
 
    ```bash
-   pnpm install
+   yarn install
    ```
 
 2. Set up Convex:
 
    ```bash
-   cd packages/backend
+   cd apps/backend
    npx convex dev
    ```
 
@@ -40,85 +41,94 @@ A monorepo setup using Turborepo, pnpm workspaces, TanStack Start (web), Expo (m
    - Copy `.env.local.example` files to `.env.local` in each app:
      - `apps/web/.env.local.example` → `apps/web/.env.local`
      - `apps/mobile/.env.local.example` → `apps/mobile/.env.local`
-     - `packages/backend/.env.local.example` → `packages/backend/.env.local` (optional, usually auto-configured)
+     - `apps/backend/.env.local.example` → `apps/backend/.env.local` (optional, usually auto-configured)
    - Add your Convex deployment URL to the environment files
    - Note: Web app uses `VITE_` prefix, mobile app uses `EXPO_PUBLIC_` prefix
 
 4. Run development servers:
    ```bash
-   pnpm dev
+   yarn dev
    ```
-   This will start all apps in development mode.
+   This will start all apps in development mode using Turborepo.
+
+## Dependency Management
+
+This monorepo uses **Yarn v1 (Classic)** with workspace hoisting configured to isolate React dependencies between the web and mobile applications. This allows each app to use different React versions without conflicts.
+
+The root `package.json` uses `nohoist` configuration to prevent React and related packages from being hoisted to the root `node_modules`, ensuring each workspace maintains its own isolated React instance.
+
+For detailed information about the hoisting configuration, troubleshooting common issues, and understanding how dependency isolation works in this monorepo, see the [Monorepo Troubleshooting Guide](docs/monorepo-troubleshooting.md).
 
 ## Available Scripts
 
-- `pnpm dev` - Start all apps in development mode
-- `pnpm build` - Build all apps
-- `pnpm lint` - Lint all packages
-- `pnpm lint:fix` - Fix linting issues automatically
-- `pnpm format` - Format code with Prettier
-- `pnpm format:check` - Check code formatting
-- `pnpm type-check` - Run TypeScript type checking across all packages
-- `pnpm clean` - Clean build artifacts
+- `yarn dev` - Start all apps in development mode
+- `yarn build` - Build all apps
+- `yarn lint` - Lint all packages
+- `yarn lint:fix` - Fix linting issues automatically
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn type-check` - Run TypeScript type checking across all packages
+- `yarn clean` - Clean build artifacts
 
 ## Individual App Scripts
 
 ### Web App (`apps/web`)
 
-- `pnpm dev` - Start TanStack Start dev server
-- `pnpm build` - Build for production
-- `pnpm serve` - Preview production build
-- `pnpm test` - Run tests with Vitest
-- `pnpm lint` - Lint code
-- `pnpm format` - Format code with Prettier
-- `pnpm format:check` - Check code formatting
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm clean` - Clean build artifacts
+- `yarn dev` - Start TanStack Start dev server
+- `yarn build` - Build for production
+- `yarn serve` - Preview production build
+- `yarn test` - Run tests with Vitest
+- `yarn lint` - Lint code
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn type-check` - Run TypeScript type checking
+- `yarn clean` - Clean build artifacts
 
 ### Mobile App (`apps/mobile`)
 
-- `pnpm dev` - Start Expo dev server
-- `pnpm start` - Start Expo dev server (alias for dev)
-- `pnpm build` - Build for web export
-- `pnpm android` - Run on Android
-- `pnpm ios` - Run on iOS
-- `pnpm web` - Run in web browser
-- `pnpm reset-project` - Reset project to template state
-- `pnpm lint` - Lint code
-- `pnpm format` - Format code with Prettier
-- `pnpm format:check` - Check code formatting
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm clean` - Clean build artifacts
+- `yarn dev` - Start Expo dev server
+- `yarn start` - Start Expo dev server (alias for dev)
+- `yarn build` - Build for web export
+- `yarn android` - Run on Android
+- `yarn ios` - Run on iOS
+- `yarn web` - Run in web browser
+- `yarn reset-project` - Reset project to template state
+- `yarn lint` - Lint code
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn type-check` - Run TypeScript type checking
+- `yarn clean` - Clean build artifacts
 
-### Backend (`packages/backend`)
+### Backend (`apps/backend`)
 
-- `pnpm dev` - Start Convex dev server
-- `pnpm deploy` - Deploy to production
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm lint` - Lint code
-- `pnpm format` - Format code with Prettier
-- `pnpm format:check` - Check code formatting
-- `pnpm clean` - Clean build artifacts
+- `yarn dev` - Start Convex dev server
+- `yarn deploy` - Deploy to production
+- `yarn type-check` - Run TypeScript type checking
+- `yarn lint` - Lint code
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn clean` - Clean build artifacts
 
 ### Shared (`packages/shared`)
 
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm lint` - Lint code
-- `pnpm format` - Format code with Prettier
-- `pnpm format:check` - Check code formatting
-- `pnpm clean` - Clean build artifacts
+- `yarn type-check` - Run TypeScript type checking
+- `yarn lint` - Lint code
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn clean` - Clean build artifacts
 
 ## Workspace Packages
 
 - `@repo/shared` - Shared TypeScript types and utilities
 - `@repo/backend` - Convex backend functions
+- `@repo/convex-client` - Convex client API re-exports
 - `@repo/web` - TanStack Start web app
 - `@repo/mobile` - Expo mobile app
 
 ## Technology Stack
 
 - **Monorepo**: Turborepo
-- **Package Manager**: pnpm (version pinned)
+- **Package Manager**: Yarn v1 (Classic)
 - **Web Framework**: TanStack Start
 - **Mobile Framework**: Expo
 - **Backend**: Convex
